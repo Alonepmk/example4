@@ -27,7 +27,7 @@ class Home extends React.Component{
   }
   doCheck = ()=> {
     if(this.state.password === "12345"){
-      window.location.assign("/page2");
+      this.props.history.push('/page2')
     }
   }
   getText = (event)=> {
