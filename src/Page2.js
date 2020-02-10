@@ -9,18 +9,33 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 2,
     height: '99vh',
     overflowX: 'hidden',
-    overflowY: 'hidden',
   },
-  paper: {
+  papert: {
     padding: theme.spacing(2),
     textAlign: 'center',
     color: theme.palette.text.secondary,
+    marginTop:5,
+    marginLeft:5,
+    marginRight:5
     
   },
-  paper2: {
+  paperb: {
+    padding: theme.spacing(1.5),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+    marginLeft:5,
+    marginRight:5,
+  },
+  paperml: {
+    height: '85vh',
+    marginLeft: 5,
+  },
+  paperm: {
+    height: '85vh',
+  },
+  papermr: {
     height: '85vh',
     marginRight: 5,
-    marginLeft: 5,
   },
 }));
 
@@ -30,20 +45,20 @@ function Page2() {
   return (
     <div className={classes.root}>
       <Grid container spacing={1}>
-        <Grid item xs={12} style={{marginTop:5,marginLeft:5,marginRight:5}}>
-          <Paper className={classes.paper} elevation={5}>xs=12</Paper>
+        <Grid item xs={12}>
+          <Paper className={classes.papert} elevation={5}>xs=12</Paper>
         </Grid>
         <Grid item xs={3} direction="row" >
-          <Paper className={classes.paper2} elevation={3}>xs=3</Paper>
+          <Paper className={classes.paperml} elevation={3}>xs=3</Paper>
         </Grid>
         <Grid item xs={6} direction="row" >
-          <Paper className={classes.paper2} elevation={20}>xs=6</Paper>
+          <Paper className={classes.paperm} elevation={20}>xs=6</Paper>
         </Grid>
         <Grid item xs={3} direction="row">
-          <Paper className={classes.paper2} elevation={3}>xs=3</Paper>
+          <Paper className={classes.papermr} elevation={3}>xs=3</Paper>
         </Grid>
-        <Grid item xs={12} style={{marginLeft:5,marginRight:5}}>
-          <Paper className={classes.paper} elevation={5}>xs=12</Paper>
+        <Grid item xs={12}>
+          <Paper className={classes.paperb} elevation={5}>xs=12</Paper>
         </Grid>
       </Grid>
     </div>
