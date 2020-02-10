@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import { borders } from '@material-ui/system';
+import Image from './wp3323231.jpg';
 import './App.css';
 
 const useStyles = makeStyles(theme => ({
@@ -31,13 +34,33 @@ const useStyles = makeStyles(theme => ({
     marginLeft: 5,
   },
   paperm: {
-    height: '85vh',
+    height: '81vh',
+    width: '90%',
+    marginTop: 5,
   },
   papermr: {
     height: '85vh',
     marginRight: 5,
   },
+  boxtext: {
+    padding: 20,
+  }
 }));
+
+const styles = {
+  paperContainer: {
+      border: '5px',
+      borderStyle: 'solid',
+      borderColor: 'grey',
+      backgroundImage: `url(${Image})`,
+      display: 'flex',
+      justifyContent: 'center',
+      textAlign: 'center',
+      borderRadius: '5px',
+  }
+};
+
+
 
 function Page2() {
   const classes = useStyles();
@@ -46,19 +69,22 @@ function Page2() {
     <div className={classes.root}>
       <Grid container spacing={1}>
         <Grid item xs={12}>
-          <Paper className={classes.papert} elevation={5}>xs=12</Paper>
+          <Paper className={classes.papert} elevation={20}>xs=12</Paper>
         </Grid>
         <Grid item xs={3} direction="row" >
           <Paper className={classes.paperml} elevation={3}>xs=3</Paper>
         </Grid>
-        <Grid item xs={6} direction="row" >
-          <Paper className={classes.paperm} elevation={20}>xs=6</Paper>
+        <Grid item xs={6} direction="row" style={styles.paperContainer}>
+          <Paper className={classes.paperm} elevation={20}>
+              Hello
+          </Paper>
+
         </Grid>
         <Grid item xs={3} direction="row">
           <Paper className={classes.papermr} elevation={3}>xs=3</Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper className={classes.paperb} elevation={5}>xs=12</Paper>
+          <Paper className={classes.paperb} elevation={20}>xs=12</Paper>
         </Grid>
       </Grid>
     </div>
