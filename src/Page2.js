@@ -6,6 +6,9 @@ import Box from '@material-ui/core/Box';
 import { borders } from '@material-ui/system';
 import Image from './wp3323231.jpg';
 import './App.css';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -36,7 +39,7 @@ const useStyles = makeStyles(theme => ({
   paperm: {
     height: '81vh',
     width: '90%',
-    marginTop: 5,
+    marginTop: 10,
   },
   papermr: {
     height: '85vh',
@@ -44,7 +47,14 @@ const useStyles = makeStyles(theme => ({
   },
   boxtext: {
     padding: 20,
-  }
+  },
+  cardroot: {
+    maxWidth: 345,
+  },
+  media: {
+    height: 0,
+    paddingTop: '56.25%', // 16:9
+  },
 }));
 
 const styles = {
@@ -53,13 +63,15 @@ const styles = {
       borderStyle: 'solid',
       borderColor: 'grey',
       backgroundImage: `url(${Image})`,
+      backgroundPosition: 'center',
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
       display: 'flex',
       justifyContent: 'center',
       textAlign: 'center',
       borderRadius: '5px',
   }
 };
-
 
 
 function Page2() {
@@ -72,7 +84,33 @@ function Page2() {
           <Paper className={classes.papert} elevation={20}>xs=12</Paper>
         </Grid>
         <Grid item xs={3} direction="row" >
-          <Paper className={classes.paperml} elevation={3}>xs=3</Paper>
+          <Paper className={classes.paperml} elevation={3}>
+            xs=3
+            <Card className={classes.cardroot}>
+              <CardMedia
+                className={classes.media}
+                image={Image} 
+                title="Paella dish"
+              />
+            </Card><br/><br/>
+            
+            <Card className={classes.cardroot}>
+              <CardMedia
+                className={classes.media}
+                image={Image} 
+                title="Paella dish"
+              />
+            </Card><br/><br/>
+
+            <Card className={classes.cardroot}>
+              <CardMedia
+                className={classes.media}
+                image={Image} 
+                title="Paella dish"
+              />
+            </Card>
+            
+            </Paper>
         </Grid>
         <Grid item xs={6} direction="row" style={styles.paperContainer}>
           <Paper className={classes.paperm} elevation={20}>
@@ -81,7 +119,11 @@ function Page2() {
 
         </Grid>
         <Grid item xs={3} direction="row">
-          <Paper className={classes.papermr} elevation={3}>xs=3</Paper>
+          <Paper className={classes.papermr} elevation={3}>
+            xs=3
+          
+          
+          </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper className={classes.paperb} elevation={20}>xs=12</Paper>
